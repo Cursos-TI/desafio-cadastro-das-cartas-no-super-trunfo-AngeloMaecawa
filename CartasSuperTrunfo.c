@@ -5,7 +5,7 @@ int main () {
 //Foi criada variavéis com sufixos 1 e 2, para representar as duas cartas preenchidas pelo usuário.
     char estado1, estado2, codigo1 [4],codigo2 [4], cidade1 [30], cidade2 [30];
     int populacao1, populacao2, pontostur1, pontostur2;
-    float area1, area2, PIB1, PIB2;
+    float area1, area2, PIB1, PIB2, densidade1, densidade2, PIBpcapita1, PIBpcapita2;
 
 //Abaixo, fiz com que o usuário pudesse já olher as informações para ambas as cargas.
     printf("Por favor! Abaixo, digite os dados para preencher as informações de duas cartas.\n");
@@ -44,6 +44,14 @@ int main () {
     printf ("Segunda cidade: ");
     scanf ("%d", &pontostur2);
 
+//Calculando a densidade populacional da carta 1 e 2.
+    densidade1 = (float)populacao1/area1;
+    densidade2 = (float)populacao2/area2;
+
+//Calculando o PIB per capita da carta 1 e 2.
+    PIBpcapita1 = (float)PIB1/populacao1;
+    PIBpcapita2 = (float)PIB2/populacao2;
+
 //Os dados da primeira carta, que serão apresentados na tela:    
     printf("Carta 1:\n");
     printf(" - Estado: %c;\n", estado1);
@@ -52,7 +60,9 @@ int main () {
     printf(" - População: %d;\n", populacao1);
     printf(" - Área: %.3f km²;\n", area1);
     printf(" - PIB: %.2f bilhões de reais;\n", PIB1);
-    printf(" - Número de pontos turísticos: %d.\n\n", pontostur1);
+    printf(" - Número de pontos turísticos: %d;\n", pontostur1);
+    printf(" - Densidade Populacional: %.2f hab/km²\n", densidade1);
+    printf(" - PIB per Capita: %.2f reais.\n\n", PIBpcapita1);
 
 //Os dados da segunda carta, que serão apresentados na tela:        
     printf("Carta 2:\n");
@@ -62,8 +72,9 @@ int main () {
     printf(" - População: %d;\n", populacao2);
     printf(" - Área: %.3f km²;\n", area2);
     printf(" - PIB: %.2f bilhões de reais;\n", PIB2);
-    printf(" - Número de pontos turísticos: %d.\n", pontostur2);
+    printf(" - Número de pontos turísticos: %d;\n", pontostur2);
+    printf(" - Densidade Populacional: %.2f hab/km²\n", densidade2);
+    printf(" - PIB per Capita: %.2f reais.", PIBpcapita2);
 
     return 0;
-
 }
